@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +20,11 @@
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="novo-usuario.php">Novo Usuario</a>
+                <a class="nav-link" href="?page=novo">Novo Usuario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="listar-usuario.php">Listar Usuarios</a>
+                <a class="nav-link" href="?page=listar">Listar Usuarios</a>
             </li>
-      
         </ul>
     </div>
 </nav>
@@ -33,6 +32,7 @@
   <div class = "row">
     <div class = "col mt-5">
     <?php
+    include("config.php");
 switch (@$_REQUEST["page"]) {
   case "novo":
     include ("novo-usuario.php");
@@ -40,8 +40,11 @@ switch (@$_REQUEST["page"]) {
   case "listar":
     include ("listar-usuario.php");
     break;
+    case "salvar":
+        include("salvar-usuario.php");
+        break;
     default:
-    print"bem-vindo";
+    print"<h1>bem-vindo</h1>";
 }
 ?>
 
