@@ -6,38 +6,25 @@ switch ($_REQUEST["acao"]) {
         $senha = md5($_POST["senha"]);
         $data_nascimento = $_POST["data_nascimento"];
 
-        $sql = " INSERT INTO usuarios (nome , email , senha , data_nascimento ) VALUES ( '{nome}' , '{email}' , '{senha}' , '{data_nascimento}')";
+        $sql = "INSERT INTO usuarios (nome, email, senha, data_nascimento) VALUES ('$nome', '$email', '$senha', '$data_nascimento')";
 
         $res = $conn->query($sql);
 
-        if($res==true){
-
-            print"<script>alert('cadastrado com sucesso');</script>";
-            print"<script>location.href='?page=listar';</script";
-
-
-        }else{
-
-            print"<script>alert('nao foi possivel cadastrar');</script>";
-            print"<script>location.href='?page=listar';</script";
-
-
+        if ($res == true) {
+            print "<script>alert('Cadastrado com sucesso');</script>";
+            print "<script>location.href='?page=listar';</script>";
+        } else {
+            print "<script>alert('Não foi possível cadastrar');</script>";
+            print "<script>location.href='?page=listar';</script>";
         }
-
-
-
-
-        
         break;
-    
+
     case 'editar':
-         
-         break;
+        // Código para editar
+        break;
 
     case 'excluir':
-         
-         break;
-
+        // Código para excluir
+        break;
 }
-
 ?>
