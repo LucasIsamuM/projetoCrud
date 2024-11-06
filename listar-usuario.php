@@ -24,8 +24,10 @@ if ($qtd > 0) {
         print "<td>" . $row->email . "</td>";
         print "<td>" . $row->data_nascimento . "</td>";
         print "<td>
-        <button class='btn btn-success'>EDITAR</button>
-        <button class='btn btn-danger'>EXCLUIR</button>
+        <button onclick= \"location.href='?page=editar&id=".$row->id."';\"class='btn btn-success'>EDITAR</button>
+
+
+        <button onclick= \"if(confirm('Quer excluir mesmo ?')){location.href='?page=salvar&acao=excluir&id=".$row->id."';} else {false;}\" class='btn btn-danger'>EXCLUIR</button>
 
         
                </td>";
