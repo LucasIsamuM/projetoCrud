@@ -31,26 +31,45 @@ h1, label {
     font-size: 1.2rem;
     margin-right: 1.5rem; 
 }
+
 .navbar a {
     position: relative;
-    color: black; /* Ajuste para a cor do texto desejada */
+    color: black; 
     text-decoration: none;
     padding: 8px 16px;
+    transition: color 0.3s;
 }
 
-.navbar a:hover::after, .navbar a:focus::after, .navbar a.active::after {
+.navbar a:hover::after, 
+.navbar a:focus::after, 
+.navbar a.active::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 2px;
-    background-color: black; 
+    background-color: black; /* Cor da linha embaixo do link */
+    transition: width 0.3s ease;
+}
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
 }
 
-.navbar a:hover, .navbar a:focus, .navbar a.active {
+.navbar a:hover, 
+.navbar a:focus, 
+.navbar a.active {
     text-decoration: none;
+    color: black; 
 }
+
 
 input[type="text"],
 input[type="email"],
