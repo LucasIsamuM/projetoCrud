@@ -6,8 +6,4 @@ define('BASE' , 'projetocrud');
 
 $conn = new mysqli(HOST,USER,PASS,BASE);
 
-
-
-
-
 ?>
